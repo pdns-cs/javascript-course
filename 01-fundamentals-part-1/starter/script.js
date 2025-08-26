@@ -184,3 +184,67 @@ console.log(`I'm ${2037 - 1991} years old`);
 console.log(`Math works: ${2+3} equals five`);
 console.log(`Comparisons too: ${5 > 3}`);
 console.log(`Just a regular string`);
+
+// Taking Decisions: if / else Statements
+const age = 15;
+
+if (age >= 18) {
+  console.log("Sarah can start driving license");
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is too young. Wait another ${yearsLeft} years :`);
+}
+
+// Variable Assignment with Decicions
+const birthYear2 = 2012;
+let century;
+if (birthYear <= 2000) {
+  century = 20;
+}
+else {
+  century = 21;
+}
+console.log(century);
+
+// Real-world Decision Making
+const massMarkk = 85;
+
+if (score >= 60) {
+  console.log(`You passed with ${score} points!`);
+  console.log("Congratulations!");
+} else {
+  const pointsNeeded = 60 - score;
+  console.log(`You failed. Need ${pointsNeeded} more points`);
+}
+
+//////////////////////////
+// Truthy and Falsy Values
+
+console.log(Boolean(0)); // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean("Jonas")); // true
+console.log(Boolean({})); // true
+console.log(Boolean("")); // false (empty string)
+
+////////////////////////////
+// Coding Challenge #2: BMI Comparison
+
+// Reuse your BMI calculation from Challenge #1
+const massMark = 78;
+const heightMark = 1.69;
+const massJohn = 92;
+const heightJohn = 1.95;
+
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+console.log(BMIMark, BMIJohn);
+
+// Your if/else statement here:
+// Compare BMIs and create intelligent messages
+// Use template literals for beautiful output
+
+if (BMIMark > BMIJohn) {
+  console.log(`Mark's BMI (${BMIMark}) is higher than John's (${BMIJohn})!`);
+} else { 
+  console.log(`John's BMI (${BMIJohn}) is higher than Mark's (${BMIMark})!`);
+}
