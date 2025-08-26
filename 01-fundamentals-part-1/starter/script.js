@@ -252,64 +252,127 @@
 
 //////////////////////////////
 // Type Conversion and Coercion
-const inputYear = "1991";
-console.log(Number(inputYear), inputYear);
-console.log(Number(inputYear) + 18);
+// const inputYear = "1991";
+// console.log(Number(inputYear), inputYear);
+// console.log(Number(inputYear) + 18);
 
-console.log(Number("Jonas"));
-console.log(typeof NaN);
+// console.log(Number("Jonas"));
+// console.log(typeof NaN);
 
-console.log(String(23), 23);
-console.log(typeof String(23));
+// console.log(String(23), 23);
+// console.log(typeof String(23));
 
-// Automatic Type Coercion
-console.log("I am " + 23 + " years old");
-console.log("23" - "10" - 3);
-console.log("23" / "2");
-console.log("23" * "2"); 
+// // Automatic Type Coercion
+// console.log("I am " + 23 + " years old");
+// console.log("23" - "10" - 3);
+// console.log("23" / "2");
+// console.log("23" * "2"); 
 
-let n = "1" + 1; 
-console.log(n);
+// let n = "1" + 1; 
+// console.log(n);
 
-n = n - 1;  
-console.log(n);
+// n = n - 1;  
+// console.log(n);
 
-// Type Conversion = explicit/manual (recommended)
-// Type Coercion = implicit/automatic 
+// // Type Conversion = explicit/manual (recommended)
+// // Type Coercion = implicit/automatic 
+
+// //////////////////////////////
+// //  Equality - Strict
+// const age = 18; 
+// if (age === 18) console.log(`You just became an adult (strict)`);
+// if (age == 18) console.log(`You just became an adult :D (loose)`);
+
+// console.log('18' === 18);
+// console.log('18' == 18); // coersion happens
+// console.log(18 === 18);
+
+// // Why == can be dangerous
+// console.log("0" == 0); 
+// console.log(0 == false); 
+// console.log("0" == false); 
+// console.log(null == undefined);
+
+// console.log("" == 0); 
+// console.log("   " == 0);
+
+// // Best Practice
+// const favourite = Number(prompt("What's your favourite number?"));
+// console.log(favourite);
+// console.log(typeof favourite);
+
+// if (favourite === 23) {
+//   console.log("Cool! 23 is an amazing number!");
+// } else if (favourite === 7) {
+//   console.log("7 is also a cool number");
+// } else if (favourite === 9) {
+//   console.log("9 is also a cool number");
+// } else {
+//   console.log("Number is not 23 or 7 or 9");
+// }
+
+// if (favourite !== 23) console.log("Why not 23?");
+
+// //////////////////////////////
+// // Logical Operators
+
+// const hasDriversLicense = true; 
+// const hasGoodVision = true;
+
+// console.log(`AND OPERATOR:`, hasDriversLicense && hasGoodVision);
+// console.log(`OR OPERATOR:`, hasDriversLicense || hasGoodVision);
+// console.log(`NOT OPERATOR:`, !hasDriversLicense);
+
+// const isTired = false;
+// console.log(hasDriversLicense && hasGoodVision && !isTired);  
+
+// if (hasDriversLicense && hasGoodVision && !isTired) {
+//   console.log(`Ces is able to drive!`);
+// } else {
+//   console.log(`Someone else should drive...`);
+// } 
+
+// // Create a club entry system with these rules:
+// // Entry allowed if: (age >= 21 AND hasID) OR isVIP
+
+// const age = 19; // Try different values
+// const hasID = true; // Try different values
+// const isVIP = false; // Try different values
+
+// // Your logic here:
+// if ((age >= 21 && hasID) || isVIP) {
+//   console.log("Entry allowed");
+// } else {
+//   console.log("Entry denied");
+// } 
 
 //////////////////////////////
-//  Equality - Strict
-const age = 18; 
-if (age === 18) console.log(`You just became an adult (strict)`);
-if (age == 18) console.log(`You just became an adult :D (loose)`);
+// Ternary Operator
+// const age = 17;
 
-console.log('18' === 18);
-console.log('18' == 18); // coersion happens
-console.log(18 === 18);
+// const drink = age >= 18 ? "wine" : "water";
+// console.log(drink); 
 
-// Why == can be dangerous
-console.log("0" == 0); 
-console.log(0 == false); 
-console.log("0" == false); 
-console.log(null == undefined);
+// let drink2
+// if (age >= 18) {
+//   drink2 = "wine";
+// } else {
+//   drink2 = "water";
+// } 
 
-console.log("" == 0); 
-console.log("   " == 0);
+// console.log(drink2);
 
-// Best Practice
-const favourite = Number(prompt("What's your favourite number?"));
-console.log(favourite);
-console.log(typeof favourite);
+// consolelog(`I like to drink ${age >= 18 ? "wine" : "water"}`);
 
-if (favourite === 23) {
-  console.log("Cool! 23 is an amazing number!");
-} else if (favourite === 7) {
-  console.log("7 is also a cool number");
-} else if (favourite === 9) {
-  console.log("9 is also a cool number");
-} else {
-  console.log("Number is not 23 or 7 or 9");
-}
+// Coding Challenge #4
 
-if (favourite !== 23) console.log("Why not 23?");
+const bill = 275; // Test with 275, 40, and 430
+
+// Step 1: Create the tip calculation using ternary operator
+// Rule: 15% if between 50-300, otherwise 20%
+// Hint: bill >= 50 && bill <= 300
+const tip = bill <= 300 && bill >= 5 ? bill * 0.15 * bill * 0.2:
+
+// Step 2: Create beautiful output with template literal
+console.log(`The bill was ${bill}, the tip was ${bill * tip}, and the total value ${bill + (bill * tip)}`); 
 
