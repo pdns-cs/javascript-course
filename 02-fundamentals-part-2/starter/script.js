@@ -493,3 +493,45 @@ heading.style.fontSize = "3rem";
 const button = document.querySelector("btn");
 button.style.padding = "20px";
 button.style.borderRadium = "10px";
+
+// Event Listeners
+button.addEventListener("click", function() {
+    console.log('Button was clicked!');
+    message.textContent = "You clicked the button";
+    message.style.color = "green";
+});
+
+let clickCount = 0;
+button.addEventListener("click", function () {
+    clickCount++;
+    button.textContent = `Clicked $(clickCount) times`;
+     button.style.backgroundColor = `hsl(${clickCount * 30}, 70%, 50%)`;
+});
+
+// Input events 
+const display = document.querySelector(".message");
+input.addEventListener("input", function () {    
+    const userText = input.value;
+    display.textContent = `You typed $(userText)`
+    message.style.fontSize = `${userText.length + 10}px`;
+});
+
+// Keyboard events - responding to specific keys
+input.addEventListener("keydown", function (event) {
+  console.log(`Key pressed: ${event.key}`);
+
+  if (event.key === "Enter") {
+    message.textContent = `You pressed Enter! Text was: ${input.value}`;
+    input.value = ""; 
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    // Reset everything
+    message.textContent = "Reset with Escape key!";
+    input.value = "";
+    clickCount = 0;
+    button.textContent = "Click Me!";
+  }
+});
