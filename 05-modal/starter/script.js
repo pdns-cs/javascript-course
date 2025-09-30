@@ -39,3 +39,7 @@ let lastFocusedButton = null;
     }
 });
 
+modalEl.setAttribute('role', 'dialog');
+modalEl.setAttribute('aria-modal', 'true');
+
+btnCloseModalEl.setAttribute('aria-label', 'Close-modal');
